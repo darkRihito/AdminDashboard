@@ -1,14 +1,18 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import helmet from 'helmet';
-import morgan from 'morgan';
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import morgan from "morgan";
 import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
+
+// Data Imports
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 
 // Configuration
 dotenv.config();
@@ -42,6 +46,6 @@ mongoose
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
-    // User.insertMany(dataUser);
+    // User.insertMany(dataUser);s
   })
   .catch((error) => console.log(`${error} did not connect`));
