@@ -12,7 +12,9 @@ import salesRoutes from "./routes/sales.js";
 
 // Data Imports
 import User from "./models/User.js";
-import { dataUser } from "./data/index.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
+import ProductStat from "./models/ProductStat.js";
+import Product from "./models/Product.js";
 
 // Configuration
 dotenv.config();
