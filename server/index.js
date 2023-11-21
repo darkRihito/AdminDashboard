@@ -1,14 +1,20 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import helmet from 'helmet';
-import morgan from 'morgan';
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import morgan from "morgan";
 import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
+
+// Data Imports
+import User from "./models/User.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
+import ProductStat from "./models/ProductStat.js";
+import Product from "./models/Product.js";
 
 // Configuration
 dotenv.config();
